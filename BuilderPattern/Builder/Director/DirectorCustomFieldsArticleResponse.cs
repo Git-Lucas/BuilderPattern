@@ -1,5 +1,5 @@
-﻿namespace BuilderPattern.Builder.DefaultArticle;
-public class DirectorDefaultArticleResponse(IBuilderDefaultArticleResponse builderArticleResponse)
+﻿namespace BuilderPattern.Builder.Director;
+public class DirectorCustomFieldsArticleResponse(IBuilderCustomFieldsArticleResponse builderArticleResponse)
 {
     public void BuildFullArticle()
     {
