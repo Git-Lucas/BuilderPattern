@@ -1,5 +1,5 @@
-﻿namespace BuilderPattern.Builder;
-public interface IBuilderArticleResponse
+﻿namespace BuilderPattern.Builder.Director;
+public interface IBuilderCustomFieldsArticleResponse
 {
     void BuildTitle();
     void BuildIntroduction();
