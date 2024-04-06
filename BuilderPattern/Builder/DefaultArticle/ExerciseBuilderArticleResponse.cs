@@ -1,7 +1,7 @@
 ﻿using BuilderPattern.Entities;
 
-namespace BuilderPattern.Builder;
-public class ExerciseBuilderArticleResponse : IBuilderArticleResponse
+namespace BuilderPattern.Builder.DefaultArticle;
+public class ExerciseBuilderArticleResponse : IBuilderDefaultArticleResponse
 {
     private Article _article = new();
 

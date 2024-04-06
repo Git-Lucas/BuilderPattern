@@ -1,23 +1,32 @@
-﻿using BuilderPattern.Builder;
+﻿using BuilderPattern.Builder.CustomArticle;
+using BuilderPattern.Builder.DefaultArticle;
 using BuilderPattern.Entities;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 ExerciseBuilderArticleResponse exerciseBuilderArticleResponse = new();
 
-DirectorArticleResponse directorArticleResponse = new(exerciseBuilderArticleResponse);
-Console.WriteLine("Full Article: ");
-directorArticleResponse.BuildFullArticle();
+DirectorDefaultArticleResponse directorDefaultArticleResponse = new(exerciseBuilderArticleResponse);
+Console.WriteLine("Full Default Article: ");
+directorDefaultArticleResponse.BuildFullArticle();
 Display(exerciseBuilderArticleResponse.GetArticle());
 
-Console.WriteLine("\nMinimal Article: ");
-directorArticleResponse.BuildMinimalArticle();
+Console.WriteLine("\nMinimal Default Article: ");
+directorDefaultArticleResponse.BuildMinimalArticle();
 Display(exerciseBuilderArticleResponse.GetArticle());
 
-Console.WriteLine("\nCustom Article: ");
+Console.WriteLine("\nCustom Properties Default Article: ");
 exerciseBuilderArticleResponse.BuildTitle();
 exerciseBuilderArticleResponse.BuildConclusion();
 Display(exerciseBuilderArticleResponse.GetArticle());
+
+Console.WriteLine("\nCustom Article: ");
+Article myArticle = new BuilderCustomArticleResponse()
+    .WithTitle("My title.")
+    .WithBody("My body.")
+    .WithConclusion("My conclusion.")
+    .Build();
+Display(myArticle);
 
 void Display(Article article)
 {
